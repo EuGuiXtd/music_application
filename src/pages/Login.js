@@ -23,16 +23,16 @@ class Login extends React.Component {
 
   Click = async () => {
     this.setState({ mensagemCarregando: true });
-    const { nome: nomeArtistico } = this.state;
+    const { nome } = this.state;
     const { history } = this.props;
-    await createUser({ name: nomeArtistico });
+    await createUser({ name: nome });
     history.push('./search');
   };
 
   condicao = () => {
-    const { nome: nomeArtistico } = this.state;
+    const { nome } = this.state;
     const numero = 3;
-    if (nomeArtistico.length < numero) {
+    if (nome.length < numero) {
       return true;
     }
   };
