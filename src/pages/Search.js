@@ -30,7 +30,7 @@ class Search extends React.Component {
     const fetchMusicas = await searchAlbumsAPI(inputSearch);
     this.setState({
       inputSearch: '',
-      musicas: [...fetchMusicas],
+      musicas: fetchMusicas,
       mensagemCarregando: false,
     });
     console.log(searchAlbumsAPI);
